@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">Binge Hunt</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="my-2 my-lg-0 ml-auto">
+        {{#if isAuthenticated}}
+          <a href="/dashboard" class="btn btn-default"><span class="fa fa-user"></span> Profile</a>
+          <a href="/logout" class="btn btn-default"><span class="fa fa-user"></span> Logout</a>
+        {{else}}
+          <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
+          <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</nav>
