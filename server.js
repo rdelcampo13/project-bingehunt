@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // For Passport
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true})); // session secret
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized:true})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -25,7 +25,6 @@ app.use(express.static("app/public"));
 
 //For Handlebars
 app.set('views', './app/views')
-app.set('layouts', './app/views/layouts')
 app.set("view engine", ".hbs"); // Setup Handlebars.
 app.engine("hbs", exphbs({
   defaultLayout: "main.hbs",
