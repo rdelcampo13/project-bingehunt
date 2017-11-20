@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lyndachiwetelu/node-passport-with-sequelize-and-mysql-example#readme",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.16.0",
     "connect-flash": "^0.1.1",

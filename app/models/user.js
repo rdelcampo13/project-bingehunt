@@ -7,7 +7,7 @@ module.exports = function(sequelize, Sequelize) {
 		lastname: { type: Sequelize.STRING, notEmpty: true},
 		email: { type:Sequelize.STRING, validate: {isEmail:true} },
 		password : {type: Sequelize.STRING,allowNull: false },
-    status: {type: Sequelize.ENUM('active','inactive'),defaultValue:'active' }
+    	status: { type: Sequelize.ENUM('active','inactive'), defaultValue:'active' }
 	});
 
 	return User;

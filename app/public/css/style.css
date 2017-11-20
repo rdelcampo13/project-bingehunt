@@ -6,6 +6,47 @@
   align-items: center;
 }
 
+
+body {
+background: url(../pictures/pic60.jpg) no-repeat center center fixed;
+            background-size:cover;
+            height: 100%;
+            width: 100%;
+
+
+
+
+}
+
 .add {
   margin-top: 80px;
+}
+
+#pic {
+	margin-top:20px;
+	border-style: hidden;
+}
+
+#card {
+	border-width: 1px;
+/*	margin: auto;
+*/	border-style: groove;
+	background-color: white;
+	
+
+}
+
+#card2 {
+	border-style: hidden;
+	border-width: 1px;
+}
+
+#jumbotron1 {
+			background:transparent !important;
+
+}
+
+#navbar2 {
+				background:transparent !important;
+
 }
