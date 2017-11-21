@@ -1,3 +1,5 @@
+var db = require('../models');
+
 var exports = module.exports = {}
 
 exports.home = function(req, res) {

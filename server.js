@@ -35,8 +35,9 @@ app.engine("hbs", exphbs({
 
 
 // Routes ==========================================================
-require('./app/routes/auth-routes.js')(app, passport);
 require('./app/routes/html-routes.js')(app, passport);
+require('./app/routes/auth-routes.js')(app, passport);
+require('./app/routes/binge-api-routes.js')(app, passport);
 require('./app/routes/404-routes.js')(app);
 
 //load passport strategies
