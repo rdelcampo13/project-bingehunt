@@ -22,9 +22,17 @@ body {
   padding: 6rem 2rem;
 }
 
-
 .card {
   margin-bottom: 20px;
+}
+
+.card-btn {
+  margin-right: 10px; 
+  font-size: .8rem;
+}
+
+.card-icon {
+  padding-right: 5px;
 }
 
 

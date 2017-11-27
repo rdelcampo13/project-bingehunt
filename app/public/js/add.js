@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   function createBingeCard(binge) {
     var card = $('<div>').addClass('card');
+      card.attr('id', 'binge-' + binge.id);
 
     var cardBody = $('<div>').addClass('card-body');
     var cardTitle = $('<h4>').addClass('card-title');
@@ -9,12 +10,34 @@ $(document).ready(function() {
     var cardText = $('<p>').addClass('card-title');
       cardText.text(binge.short_desc); 
 
+    var cardBtnUpvote = $('<a>').addClass('btn btn-warning card-btn upvote-btn');        
+    var cardUpvoteIcon = $('<i>').addClass('fa fa-caret-up card-icon');
+    var cardUpvoteCount = $('<span>').addClass('upvote-count');
+      cardUpvoteCount.data("data-upvotes", binge.upvotes); 
+      cardUpvoteCount.data("data-bingeId", binge.id);
+      cardUpvoteCount.attr('id', 'upvote-binge-' + binge.id);
+      cardUpvoteCount.text(binge.upvotes); 
+
+    var cardBtnSave = $('<a>').addClass('btn btn-warning card-btn');        
+    var cardSaveIcon = $('<i>').addClass('fa fa-plus-circle card-icon');
+    var cardSaveText = $('<span>').addClass('save-text');
+      cardSaveText.text('Save'); 
+    
+    cardBtnUpvote.append(cardUpvoteIcon);
+    cardBtnUpvote.append(cardUpvoteCount);
+
+    cardBtnSave.append(cardSaveIcon);
+    cardBtnSave.append(cardSaveText);
+
     cardBody.append(cardTitle);
     cardBody.append(cardText);
+    cardBody.append(cardBtnUpvote);
+    cardBody.append(cardBtnSave);
         
     card.append(cardBody);
 
     return card
+
   };
 
   //Input that determine what fields to show

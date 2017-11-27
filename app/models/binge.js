@@ -11,8 +11,8 @@ module.exports = function(sequelize, Sequelize) {
 	});
 
 	Binge.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
+    // Every Binge should belong to a User
+    // A Binge can't be created without a User due to the foreign key constraint
     Binge.belongsTo(models.user, {
       foreignKey: {
         allowNull: false
