@@ -1,3 +1,11 @@
+/* GLOBAL */
+body {
+  background-image: url("../img/playstation.png");
+  background-attachment: fixed;
+}
+
+
+/* HOMEPAGE */
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
@@ -6,15 +14,26 @@
   align-items: center;
 }
 
+.hero {
+  background-image: url("../img/home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 35%;
+  padding: 6rem 2rem;
+}
+
+
+.card {
+  margin-bottom: 20px;
+}
+
+
+/* ADD PAGE */
 .add {
   margin-top: 80px;
 }
 
 .congrats {
   margin-bottom: 40px;
-}
-
-.card {
-  margin-bottom: 20px;
 }
 

@@ -2,14 +2,16 @@ $(document).ready(function() {
 
   function createBingeCard(binge) {
     var card = $('<div>').addClass('card');
+
     var cardBody = $('<div>').addClass('card-body');
     var cardTitle = $('<h4>').addClass('card-title');
       cardTitle.text(binge.title);
     var cardText = $('<p>').addClass('card-title');
-      cardText.text(binge.short_desc);
+      cardText.text(binge.short_desc); 
 
     cardBody.append(cardTitle);
     cardBody.append(cardText);
+        
     card.append(cardBody);
 
     return card
@@ -49,7 +51,7 @@ $(document).ready(function() {
         break;
 
       default:
-        var platformInput = "";
+        var platformInput = typeInput;
     };
 
     // Wont submit the post if we are missing a body, title, or author
