@@ -18,9 +18,12 @@ $(document).ready(function() {
       cardUpvoteCount.attr('id', 'upvote-binge-' + binge.id);
       cardUpvoteCount.text(binge.upvotes); 
 
-    var cardBtnSave = $('<a>').addClass('btn btn-warning card-btn');        
-    var cardSaveIcon = $('<i>').addClass('fa fa-plus-circle card-icon');
+    var cardBtnSave = $('<a>').addClass('btn btn-warning card-btn save-btn');        
+    var cardSaveIcon = $('<i>').attr('id', 'fav-icon-binge-' + binge.id);
+      cardSaveIcon.addClass('fa fa-plus-circle card-icon');
     var cardSaveText = $('<span>').addClass('save-text');
+      cardSaveText.data("data-bingeId", binge.id);
+      cardSaveText.attr('id', 'fav-binge-' + binge.id);
       cardSaveText.text('Save'); 
     
     cardBtnUpvote.append(cardUpvoteIcon);
@@ -37,7 +40,6 @@ $(document).ready(function() {
     card.append(cardBody);
 
     return card
-
   };
 
   //Input that determine what fields to show

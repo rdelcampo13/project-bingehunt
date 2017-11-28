@@ -24,6 +24,7 @@ $(document).ready(function() {
       data: data
     }).then(function(newUpvote) {
       if (newUpvote.isLoggedIn === false) {
+        $('#loginModalType').text('upvote');        
         $('#loginModal').modal('show');
       } 
       
