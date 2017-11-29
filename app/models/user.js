@@ -10,6 +10,22 @@ module.exports = function(sequelize, Sequelize) {
     	status: { type: Sequelize.ENUM('active','inactive'), defaultValue:'active' }
 	});
 
+	User.associate = function(models) {
+    // Associating User with Binges
+    // When a User is deleted, also delete any associated Binges
+    User.hasMany(models.binge, {
+      onDelete: "cascade"
+    });
+
+		// Associating User with Upvotes
+    // When a User is deleted, also delete any associated Upvotes
+		User.hasMany(models.upvote, {
+      onDelete: "cascade"
+    });
+
+
+  };
+
 	return User;
 
 }

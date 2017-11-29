@@ -1,3 +1,11 @@
+/* GLOBAL */
+body {
+  background-image: url("../img/playstation.png");
+  background-attachment: fixed;
+}
+
+
+/* HOMEPAGE */
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
@@ -6,44 +14,46 @@
   align-items: center;
 }
 
-
-body {
-background: url(../pictures/pic60.jpg) no-repeat center center fixed;
-            background-size:cover;
-            height: 100%;
-            width: 100%;
-
+.hero {
+  background-image: url("../img/home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 35%;
+  padding: 6rem 2rem;
 }
 
+.type-filter {
+  padding: 1rem;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.type-filter-heading {
+  font-weight: 600;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-btn {
+  margin-right: 10px; 
+  font-size: .8rem;
+}
+
+.card-icon {
+  padding-right: 5px;
+}
+
+
+/* ADD PAGE */
 .add {
   margin-top: 80px;
 }
 
-#pic {
-	margin-top:20px;
-	border-style: hidden;
+.congrats {
+  margin-bottom: 40px;
 }
 
-.my-card {
-	border-width: 1px;
-/*	margin: auto;
-*/	border-style: groove;
-	background-color: white;
-
-
-}
-
-#card2 {
-	border-style: hidden;
-	border-width: 1px;
-}
-
-#jumbotron1 {
-			background:transparent !important;
-
-}
-
-#navbar2 {
-				background:transparent !important;
-
-}

@@ -36,8 +36,11 @@ app.engine("hbs", exphbs({
 
 
 // Routes ==========================================================
-require('./app/routes/auth-routes.js')(app, passport);
 require('./app/routes/html-routes.js')(app, passport);
+require('./app/routes/auth-routes.js')(app, passport);
+require('./app/routes/binge-api-routes.js')(app, passport);
+require('./app/routes/upvote-api-routes.js')(app, passport);
+require('./app/routes/favorite-api-routes.js')(app, passport);
 require('./app/routes/404-routes.js')(app);
 
 //load passport strategies
@@ -46,7 +49,7 @@ require('./app/config/passport/passport.js')(passport, db.user);
 
 // Run App ==========================================================
 //Sync Database
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

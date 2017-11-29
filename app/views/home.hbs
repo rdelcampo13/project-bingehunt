@@ -1,50 +1,47 @@
 {{> navbar isAuthenticated=isAuthenticated}}
-<div class="jumbotron jumbotron-fluid" id="jumbotron1">
-    <div class="container text-center">
-        <h1 class="animated infinite bounce">Binge On.</h1>
+
+<div class="jumbotron jumbotron-fluid hero">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12">
+        <h1 class="display-3">Binge On.</h1>
         <p class="lead">Find some new content to kill some time.</p>
         <a href="/add" class="btn btn-warning">Add a Binge</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container home-container">
+  <div class="row">
+    <div class="col-3">
+      <div class="type-filter">
+        <p class="type-filter-heading">Binge Type</p>
+        <div class="nav flex-column nav-pills" id="bingeNav" role="tablist" aria-orientation="vertical">
+          <a class="nav-link binge-nav active" id="All" data-toggle="pill" role="tab" aria-controls="all" aria-selected="true">All</a>
+          <a class="nav-link binge-nav" id="Film" data-toggle="pill" role="tab" aria-controls="film" aria-selected="false">Film</a>
+          <a class="nav-link binge-nav" id="Television" data-toggle="pill" role="tab" aria-controls="television" aria-selected="false">Television</a>
+          <a class="nav-link binge-nav" id="Streaming" data-toggle="pill" role="tab" aria-controls="streaming" aria-selected="false">Streaming</a>
+          <a class="nav-link binge-nav" id="Web" data-toggle="pill" role="tab" aria-controls="web" aria-selected="false">Web</a>
+        </div>        
+      </div>
+    </div>
+    <div class="col-9">
+
+      <div id="bingeList">
+
+      </div>
+      
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4" id="card2">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link text-white" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Film</a>
-                <a class="nav-link text-white" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Television</a>
-                <a class="nav-link text-white" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Streaming</a>
-                <a class="nav-link text-white" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Web</a>
-            </div>
-        </div>
-        <div class="col-md-8">
-            {{#each binges}}
-            <div class="row p-3 mb-2 bg-dark text-white rounded animated fadeInRight my-card">
-                <div class="col-md-3">
-                    <img src={{img_url}} id="pic" class="img-fluid w-90 align-middle" />
-                </div>
-                <div class="col-md-9">
-                    <div class="card-body">
-                        <h4 class="card-title">{{title}}</h4>
-                        <p class="card-text">{{short_desc}}</p>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-      <!--   <script>
-            $.fn.extend({
-                animateCss: function (animationName, callback) {
-                    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-                    this.addClass('animated ' + animationName).one(animationEnd, function() {
-                        $(this).removeClass('animated ' + animationName);
-                        if (callback) {
-                          callback();
-                        }
-                    });
-                    return this;
-                }
-            });
-            
-        </script> -->
-    </div>
-</div>
+
+{{> login-modal }}
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="./js/home.js"></script>
+

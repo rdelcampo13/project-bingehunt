@@ -1,39 +1,89 @@
 {{> navbar isAuthenticated=isAuthenticated}}
 
 <div class="container add">
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-md-center" id="addDiv">
     <div class="col-md-6">
-      <h1>Add a Binge</h1>
-      <!-- show any messages that come back with authentication -->
-      {{#if message.length}}
-        <div class="alert alert-danger">{{message}}</div>
-      {{/if}}
 
-      <!-- Login FORM -->
-			<form id="add">
-        <div class="form-group">
-					<label>Name</label>
-					<input class="text form-control" id="name" name="name" type="text" />
-        </div>
-        <div class="form-group">
-					<label>Type</label>
-          <input type="password" class="form-control" name="password">
-        </div>
+      <div class="add-form">
+        <h1>Add a Binge</h1>
+        <!-- show any messages that come back with authentication -->
+        {{#if message.length}}
+          <div class="alert alert-danger">{{message}}</div>
+        {{/if}}
 
-        <button type="submit" class="btn btn-primary btn-lg">Login</button>
-      </form>
+        <div id="formMessage"></div>
 
-      <hr>
+        <!-- Login FORM -->
+  			<form id="add">
+          <div class="form-group">
+  					<label>Title</label>
+  					<input class="text form-control" id="title" name="title" type="text" />
+          </div>
+          <div class="form-group">
+  					<label>Type</label>
+            <select class="form-control" id="type">
+              <option value="" disabled selected>Select a type</option>
+              <option>Film</option>
+              <option>Television</option>
+              <option>Streaming</option>
+              <option>Web</option>
+            </select>
+          </div>
+          <div class="form-group d-none" id="streamPlatformDiv">
+  					<label>Platform</label>
+            <select class="form-control" id="streamPlatform">
+              <option value="" disabled selected>Select a platform</option>
+              <option>Netflix</option>
+              <option>Hulu</option>
+              <option>Amazon Prime</option>
+              <option>HBO Go</option>
+            </select>
+          </div>
+          <div class="form-group d-none" id="webPlatformDiv">
+  					<label>Platform</label>
+            <select class="form-control hidden" id="webPlatform">
+              <option value="" disabled selected>Select a platform</option>
+              <option>YouTube</option>
+              <option>Twitch</option>
+            </select>
+          </div>
+          <div class="form-group">
+  					<label>Short Description</label>
+  					<input class="text form-control" id="shortDesc" name="shortDesc" type="text" />
+          </div>
 
-      <p>Need an account? <a href="/signup">Signup</a></p>
-      <p>Or go <a href="/">home</a>.</p>
+          <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+        </form>
+      </div>
+
+
     </div>
   </div>
-</div>  
+  <div class="row justify-content-md-center d-none" id="successDiv">
+    <div class=" col-md-9">
+      <div class="add-success">
+        <h1 class="congrats text-center">
+          Congrats!
+          <small class="text-muted">Your binge has been added!</small>
+        </h1>
+
+        <div id="newBinge">
+
+        </div>
+        <p class="text-center">Where to next?</p>
+        <div class="congrats-buttons text-center">
+          <a href="/" class="btn btn-warning">Browse binges</a>
+          <a href="/dashboard" class="btn btn-warning">Go to favorites</a>
+        </div>
+      </div>
+  </div>
+
+</div>
 
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="./js/add.js"></script>
