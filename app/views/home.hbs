@@ -16,11 +16,11 @@
                 <a class="nav-link text-white" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Web</a>
             </div>
         </div>
-        <div class="col-md-8 rounded animated fadeInRight" id="card" class="p-3 mb-2 bg-dark text-white">
-            {{#each binge}}
-            <div class="row">
+        <div class="col-md-8">
+            {{#each binges}}
+            <div class="row p-3 mb-2 bg-dark text-white rounded animated fadeInRight my-card">
                 <div class="col-md-3">
-                    <img src="{{img_url}}" id="pic" class="img-fluid w-90 align-middle" />
+                    <img src={{img_url}} id="pic" class="img-fluid w-90 align-middle" />
                 </div>
                 <div class="col-md-9">
                     <div class="card-body">
@@ -31,43 +31,20 @@
             </div>
             {{/each}}
         </div>
+      <!--   <script>
+            $.fn.extend({
+                animateCss: function (animationName, callback) {
+                    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                    this.addClass('animated ' + animationName).one(animationEnd, function() {
+                        $(this).removeClass('animated ' + animationName);
+                        if (callback) {
+                          callback();
+                        }
+                    });
+                    return this;
+                }
+            });
+            
+        </script> -->
     </div>
 </div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
-
-<!-- <div>
-    <div class="container">
-        <div class="row">
-            <div class="col-3"><div class="row">
-  <div class="col-8">col-8</div>
-  <div class="col-4">col-4</div>
-</div>
-              
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3">
-            <div class="card">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-9">
-                            <div class="card-body">
-                                <h4 class="card-title">Special title treatment</h4>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div id="pic" class="column"><img src="" width="100px" height="100px" id="picture"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->

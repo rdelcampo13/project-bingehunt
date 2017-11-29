@@ -13,9 +13,6 @@ background: url(../pictures/pic60.jpg) no-repeat center center fixed;
             height: 100%;
             width: 100%;
 
-
-
-
 }
 
 .add {
@@ -27,12 +24,12 @@ background: url(../pictures/pic60.jpg) no-repeat center center fixed;
 	border-style: hidden;
 }
 
-#card {
+.my-card {
 	border-width: 1px;
 /*	margin: auto;
 */	border-style: groove;
 	background-color: white;
-	
+
 
 }
 

@@ -5,6 +5,7 @@ var session    = require('express-session')
 var bodyParser = require('body-parser')
 var exphbs     = require('express-handlebars')
 var flash      = require('connect-flash');
+var path 	   = require('path')
 
 var app        = express(); // Set up the express app
 var PORT       = process.env.PORT || 3000;
@@ -21,15 +22,15 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // Setup static directory
-app.use(express.static("app/public"));
+app.use(express.static(path.resolve(__dirname, "app/public")));
 
 //For Handlebars
-app.set('views', './app/views')
-app.set("view engine", ".hbs"); // Setup Handlebars.
+app.set('views', path.resolve(__dirname, 'app/views'))
+app.set("view engine", "hbs"); // Setup Handlebars.
 app.engine("hbs", exphbs({
   defaultLayout: "main.hbs",
-  layoutsDir:'./app/views/layouts',
-  partialsDir:'./app/views/partials',
+  layoutsDir: path.resolve(__dirname, 'app/views/layouts'),
+  partialsDir: path.resolve(__dirname, 'app/views/partials'),
   extname: ".hbs"
 }));
 
