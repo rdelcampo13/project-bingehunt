@@ -36,6 +36,7 @@ body {
 
 .card {
   margin-bottom: 20px;
+  animation: 1s linear card-animation;
 }
 
 .card-btn {
@@ -55,5 +56,14 @@ body {
 
 .congrats {
   margin-bottom: 40px;
+}
+
+@keyframes card-animation {
+  from {
+    right: -80vw;
+  }
+  to {
+    right: 0;
+  }
 }
 

@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var binges = [];
 
-  function createBingeCard(binge) {
+  function createBingeCard(binge, i) {
     var card = $('<div>').addClass('card');
       card.attr('id', 'binge-' + binge.id);
 
@@ -51,14 +51,14 @@ $(document).ready(function() {
     bingeList.empty();
 
     if (bingeFilterType === 'All') {
-      binges.forEach(function(binge) {
-        bingeList.append(createBingeCard(binge))
+      binges.forEach(function(binge, i) {
+        setTimeout(() => bingeList.append(createBingeCard(binge)), i*1000)
       });
     } else {
-      binges.forEach(function(binge) {
-        if (binge.type === bingeFilterType) {
-          bingeList.append(createBingeCard(binge));
-        };
+      binges.filter(function(binge) {
+        return binge.type === bingeFilterType
+      }).forEach(function(binge, i) {
+        setTimeout(() => bingeList.append(createBingeCard(binge)), i*1000);        
       });
     };
   });
@@ -73,9 +73,9 @@ $(document).ready(function() {
 
     var bingeList = $("#bingeList");
 
-    dbBinges.forEach(function(binge) {
+    dbBinges.forEach(function(binge, i) {
       binges.push(binge);
-      bingeList.append(createBingeCard(binge));
+      setTimeout(() => bingeList.append(createBingeCard(binge)), i*1000)
     });
 
   });
