@@ -1,7 +1,8 @@
 $(document).ready(function() {
   var binges = [];
+  var favorites = [];
 
-  function createBingeCard(binge, i) {
+  function createBingeCard(binge) {
     var card = $('<div>').addClass('card');
       card.attr('id', 'binge-' + binge.id);
 
@@ -50,34 +51,52 @@ $(document).ready(function() {
 
     bingeList.empty();
 
-    if (bingeFilterType === 'All') {
-      binges.forEach(function(binge, i) {
-        setTimeout(() => bingeList.append(createBingeCard(binge)), i*1000)
+    if (bingeFilterType === 'YourBinges') {
+      binges.forEach(function(binge) {
+        bingeList.append(createBingeCard(binge))
       });
-    } else {
-      binges.filter(function(binge) {
-        return binge.type === bingeFilterType
-      }).forEach(function(binge, i) {
-        setTimeout(() => bingeList.append(createBingeCard(binge)), i*1000);        
+    } else if (bingeFilterType === 'Favorites') {
+      favorites.forEach(function(favorite) {
+        bingeList.append(createBingeCard(favorite))
+      
       });
     };
   });
 
-  // GET all binges
+  
   $.ajax({
     method: 'GET',
-    url: '/api/binges/',
+    url: '/api/userbinges',
     dataType: 'JSON'
   })
   .done(function(dbBinges) {
 
     var bingeList = $("#bingeList");
 
-    dbBinges.forEach(function(binge, i) {
+
+    dbBinges.forEach(function(binge) {
       binges.push(binge);
-      setTimeout(() => bingeList.append(createBingeCard(binge)), i*1000)
+      bingeList.append(createBingeCard(binge));
     });
 
   });
 
-});
+  $.ajax({
+    method: 'GET',
+    url: '/api/favorites',
+    dataType: 'JSON'
+  })
+  .done(function(dbFavorites) {
+
+    var bingeList = $("#bingeList");
+
+
+    dbFavorites.forEach(function(favorite) {
+      favorites.push(favorite.binge);
+      // bingeList.append(createBingeCard(binge));
+    });
+
+  });
+
+
+})

@@ -7,9 +7,31 @@
   </div>
 </div>
 
+<div class="container home-container">
+  <div class="row">
+    <div class="col-3">
+      <div class="type-filter">
+        <p class="type-filter-heading">Binge Type</p>
+        <div class="nav flex-column nav-pills" id="bingeNav" role="tablist" aria-orientation="vertical">
+          <a class="nav-link binge-nav active" id="YourBinges" data-toggle="pill" role="tab" aria-controls="all" aria-selected="true">Your Binges</a>
+          <a class="nav-link binge-nav" id="Favorites" data-toggle="pill" role="tab" aria-controls="film" aria-selected="false">Favorites</a>
+        </div>        
+      </div>
+    </div>
+    <div class="col-9">
+
+      <div id="bingeList">
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="./js/dashboard.js"></script>
