@@ -26,6 +26,32 @@ exports.findOne = function (req, res) {
   });
 };
 
+
+exports.findAllUser = function (req, res) {
+
+  db.binge.findAll({
+    where: {
+      userId: req.user.id
+    },
+    include: [db.user]
+  })
+  .then(function(binges) {
+    res.json(binges);
+  });
+};
+
+exports.findUserFavorites = function (req, res) {
+
+  db.binge.findAll({
+    where: {
+      userId: req.user.id
+    },
+    include: [db.user]
+  })
+  .then(function(binges) {
+    res.json(binges);
+  });
+};
 // POST controller for adding a new binge
 exports.createOne = function (req, res) {
   req.body.userId = req.user.id;

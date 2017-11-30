@@ -22,7 +22,8 @@ exports.getAll = function (req, res) {
       where: {
         userId: req.user.id
       },
-      include: [db.user]
+      include: [db.user],
+      include: [db.binge],
     })
     .then(function(favorites) {
       res.json(favorites);
