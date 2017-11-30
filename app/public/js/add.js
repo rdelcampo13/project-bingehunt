@@ -4,7 +4,7 @@ $(document).ready(function() {
     var card = $('<div>').addClass('card');
       card.attr('id', 'binge-' + binge.id);
 
-    var cardBody = $('<div>').addClass('card-body');
+    var cardBody = $('<div>').addClass('card-body fadeInRight');
     var cardTitle = $('<h4>').addClass('card-title');
       cardTitle.text(binge.title);
     var cardText = $('<p>').addClass('card-title');
