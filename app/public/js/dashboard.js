@@ -3,7 +3,7 @@ $(document).ready(function() {
   var favorites = [];
 
   function createBingeCard(binge) {
-    var card = $('<div>').addClass('card');
+    var card = $('<div>').addClass('card animated animatedFadeInUp fadeInUp');
       card.attr('id', 'binge-' + binge.id);
 
     var cardBody = $('<div>').addClass('card-body');

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   function createBingeCard(binge) {
-    var card = $('<div>').addClass('card');
+    var card = $('<div>').addClass('card animateFadeFromRight');
       card.attr('id', 'binge-' + binge.id);
 
     var cardBody = $('<div>').addClass('card-body fadeInRight');
