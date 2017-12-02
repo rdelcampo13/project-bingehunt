@@ -58,7 +58,16 @@ body {
 .card-img {
   width: 70px;
   margin-right: 20px;
-  margin-bottom: 50px;
+}
+
+.card-content {
+  width: calc(100% - 90px);
+  display: inline-block;
+  float: right;
+}
+
+.card-btn-group {
+  display: block;
 }
 
 .card-btn {

@@ -7,9 +7,9 @@ $(document).ready(function() {
       card.attr('id', 'binge-' + binge.id);
 
     var cardBody = $('<div>').addClass('card-body');
-    var cardTitle = $('<h4>').addClass('card-title');
+    var cardTitle = $('<h4>').addClass('card-title card-content');
       cardTitle.text(binge.title);
-    var cardText = $('<p>').addClass('card-title');
+    var cardText = $('<p>').addClass('card-title card-content');
       cardText.text(binge.short_desc); 
 
     var cardImg = $('<img>').addClass('float-left card-img');
@@ -45,6 +45,8 @@ $(document).ready(function() {
           cardImg.attr('src', '/img/cards/netflix.png');  
       }
 
+    var cardBtnGroup = $('<a>').addClass('card-btn-group card-content');        
+
     var cardBtnUpvote = $('<a>').addClass('btn btn-warning card-btn upvote-btn');        
     var cardUpvoteIcon = $('<i>').addClass('fa fa-caret-up card-icon');
     var cardUpvoteCount = $('<span>').addClass('upvote-count');
@@ -67,11 +69,13 @@ $(document).ready(function() {
     cardBtnSave.append(cardSaveIcon);
     cardBtnSave.append(cardSaveText);
 
+    cardBtnGroup.append(cardBtnUpvote);
+    cardBtnGroup.append(cardBtnSave);
+
     cardBody.append(cardImg);
     cardBody.append(cardTitle);
     cardBody.append(cardText);
-    cardBody.append(cardBtnUpvote);
-    cardBody.append(cardBtnSave);
+    cardBody.append(cardBtnGroup);
         
     card.append(cardBody);
 
