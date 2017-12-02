@@ -6,7 +6,9 @@ var exports = module.exports = {};
 // GET list of all binges
 exports.getAll = function (req, res) {
   db.binge.findAll({
-    order: 'createdAt DESC',
+    order: [
+      ['createdAt', 'DESC']
+    ],
     include: [db.user]
   })
   .then(function(binges) {
@@ -34,7 +36,9 @@ exports.findAllUser = function (req, res) {
     where: {
       userId: req.user.id
     },
-    order: 'createdAt DESC',
+    order: [
+      ['createdAt', 'DESC']
+    ],
     include: [db.user]
   })
   .then(function(binges) {
@@ -48,7 +52,9 @@ exports.findUserFavorites = function (req, res) {
     where: {
       userId: req.user.id
     },
-    order: 'createdAt DESC',
+    order: [
+      ['createdAt', 'DESC']
+    ],
     include: [db.user]
   })
   .then(function(binges) {
