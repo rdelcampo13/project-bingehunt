@@ -36,15 +36,15 @@ app.engine("hbs", exphbs({
 
 
 // Routes ==========================================================
-require('./app/routes/html-routes.js')(app, passport);
-require('./app/routes/auth-routes.js')(app, passport);
-require('./app/routes/binge-api-routes.js')(app, passport);
-require('./app/routes/upvote-api-routes.js')(app, passport);
-require('./app/routes/favorite-api-routes.js')(app, passport);
-require('./app/routes/404-routes.js')(app);
+require(path.join(__dirname, '/app/routes/html-routes.js'))(app, passport);
+require(path.join(__dirname, '/app/routes/auth-routes.js'))(app, passport);
+require(path.join(__dirname, '/app/routes/binge-api-routes.js'))(app, passport);
+require(path.join(__dirname, '/app/routes/upvote-api-routes.js'))(app, passport);
+require(path.join(__dirname, '/app/routes/favorite-api-routes.js'))(app, passport);
+require(path.join(__dirname, '/app/routes/404-routes.js'))(app);
 
 //load passport strategies
-require('./app/config/passport/passport.js')(passport, db.user);
+require(path.join(__dirname, '/app/config/passport/passport.js'))(passport, db.user);
 
 
 // Run App ==========================================================
