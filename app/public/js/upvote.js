@@ -11,7 +11,7 @@ $(document).ready(function() {
     });
   };
   
-  $(document).on("click", ".upvote-btn", function() {
+  $(document).on("click touchstart", ".upvote-btn", function() {
     var bingeId = $(this).children("span").data("data-bingeId");
 
     var data = {

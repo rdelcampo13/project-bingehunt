@@ -1,6 +1,6 @@
 $(document).ready(function() {
     
-  $(document).on("click", ".save-btn", function() {
+  $(document).on("click touchstart", ".save-btn", function() {
     var bingeId = $(this).children("span").data("data-bingeId");
 
     var data = {
