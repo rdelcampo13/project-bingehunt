@@ -8,7 +8,7 @@ var flash      = require('connect-flash');
 var path 	     = require('path')
 
 var app        = express(); // Set up the express app
-var PORT       = process.env.PORT;
+var PORT       = process.env.PORT || 3000;
 var db         = require("./app/models"); // Requiring our models for syncing
 
 //For BodyParser
