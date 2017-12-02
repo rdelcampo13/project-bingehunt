@@ -22,6 +22,7 @@ exports.getAll = function (req, res) {
       where: {
         userId: req.user.id
       },
+      order: 'createdAt DESC',
       include: [db.user],
       include: [db.binge],
     })
