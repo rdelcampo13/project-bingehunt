@@ -12,6 +12,39 @@ $(document).ready(function() {
     var cardText = $('<p>').addClass('card-title');
       cardText.text(binge.short_desc); 
 
+    var cardImg = $('<img>').addClass('float-left card-img');
+
+      switch (binge.platform) {
+        case "Film":
+          cardImg.attr('src', '/img/cards/movie.png');
+          cardImg.addClass('movie-img');
+          break;
+        case "Television":
+          cardImg.attr('src', '/img/cards/tv.png');
+          cardImg.addClass('tv-img');
+          break;
+        case "Netflix":
+          cardImg.attr('src', '/img/cards/netflix.png');
+          break;
+        case "Hulu":
+          cardImg.attr('src', '/img/cards/hulu.jpg');
+          break;
+        case "Amazon Prime":
+          cardImg.attr('src', '/img/cards/amazon.jpg');
+          break;
+        case "HBO Go":
+          cardImg.attr('src', '/img/cards/hbo.jpg');
+          break;
+        case "YouTube":
+          cardImg.attr('src', '/img/cards/youtube.png');
+          break;
+        case "Twitch":
+          cardImg.attr('src', '/img/cards/twitch.png');
+          break;
+        default:
+          cardImg.attr('src', '/img/cards/netflix.png');  
+      }
+
     var cardBtnUpvote = $('<a>').addClass('btn btn-warning card-btn upvote-btn');        
     var cardUpvoteIcon = $('<i>').addClass('fa fa-caret-up card-icon');
     var cardUpvoteCount = $('<span>').addClass('upvote-count');
@@ -34,6 +67,7 @@ $(document).ready(function() {
     cardBtnSave.append(cardSaveIcon);
     cardBtnSave.append(cardSaveText);
 
+    cardBody.append(cardImg);
     cardBody.append(cardTitle);
     cardBody.append(cardText);
     cardBody.append(cardBtnUpvote);
@@ -44,6 +78,24 @@ $(document).ready(function() {
     return card
   };
   
+  function getFavorites() {
+    $.ajax({
+      method: 'GET',
+      url: '/api/favorites/',
+      dataType: 'JSON'
+    })
+    .done(function(favorites) {
+      if (favorites.isLoggedIn === false) {
+        return
+      }
+      
+      favorites.forEach(function(favorite) {
+        $('#fav-binge-' + favorite.bingeId).text("Saved")
+        $('#fav-icon-binge-' + favorite.bingeId).removeClass("fa-plus-circle")              
+        $('#fav-icon-binge-' + favorite.bingeId).addClass("fa-check")              
+      });          
+    });    
+  };
   
   $('.binge-nav').on("click", function() {
     var bingeFilterType = $(this).attr('id');
@@ -55,11 +107,12 @@ $(document).ready(function() {
       binges.forEach(function(binge) {
         bingeList.append(createBingeCard(binge))
       });
+      getFavorites();
     } else if (bingeFilterType === 'Favorites') {
       favorites.forEach(function(favorite) {
         bingeList.append(createBingeCard(favorite))
-      
       });
+      getFavorites();
     };
   });
 
@@ -79,6 +132,7 @@ $(document).ready(function() {
       bingeList.append(createBingeCard(binge));
     });
 
+    getFavorites();
   });
 
   $.ajax({
@@ -93,7 +147,7 @@ $(document).ready(function() {
 
     dbFavorites.forEach(function(favorite) {
       favorites.push(favorite.binge);
-      // bingeList.append(createBingeCard(binge));
+      
     });
 
   });

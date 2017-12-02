@@ -35,9 +35,13 @@ body {
 }
 
 .card {
-  margin-bottom:5px;
-          
+  margin-bottom: 10px;
+}
 
+.card-img {
+  width: 70px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .card-btn {
@@ -47,6 +51,14 @@ body {
 
 .card-icon {
   padding-right: 5px;
+}
+
+.tv-img {
+  background-color: #ffce54;
+}
+
+.movie-img {
+  background-color: #6ebec4;
 }
 
 h1.display-3 {
@@ -64,6 +76,14 @@ h1.display-3 {
   margin-bottom: 40px;
 }
 
+.add-success-nav {
+  margin-top: 40px;
+}
+
+/* DASHBOARD PAGE */
+.dash-header {
+}
+
 @keyframes card-animation {
   from {
     right: -80vw;
@@ -73,38 +93,6 @@ h1.display-3 {
   }
 }
 
-/*@-webkit-keyframes fadeInDown {
-    from {
-        opacity:0;
-        -webkit-transform: translatey(-10px);
-        -moz-transform: translatey(-10px);
-        -o-transform: translatey(-10px);
-        transform: translatey(-10px);
-    }
-    to {
-        opacity:1;
-        -webkit-transform: translatey(0);
-        -moz-transform: translatey(0);
-        -o-transform: translatey(0);
-        transform: translatey(0);
-    }
-}*/
-/*@-moz-keyframes fadeInDown {
-    from {
-        opacity:0;
-        -webkit-transform: translatey(-10px);
-        -moz-transform: translatey(-10px);
-        -o-transform: translatey(-10px);
-        transform: translatey(-10px);
-    }
-    to {
-        opacity:1;
-        -webkit-transform: translatey(0);
-        -moz-transform: translatey(0);
-        -o-transform: translatey(0);
-        transform: translatey(0);
-    }
-}*/
 @keyframes fadeInDown {
     from {
         opacity:0;
@@ -148,17 +136,6 @@ h1.display-3 {
         opacity: 1
     }
 }
-
-/*@-webkit-keyframes fadeInUp {
-    from {
-        transform: translate3d(0,40px,0)
-    }
-
-    to {
-        transform: translate3d(0,0,0);
-        opacity: 1
-    }
-}*/
 
 .animated {
     animation-duration: 1s;

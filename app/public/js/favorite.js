@@ -1,23 +1,5 @@
 $(document).ready(function() {
-  
-  $.ajax({
-    method: 'GET',
-    url: '/api/favorites/',
-    dataType: 'JSON'
-  })
-  .done(function(favorites) {
-    if (favorites.isLoggedIn === false) {
-      return
-    }
-
-    favorites.forEach(function(favorite) {
-      $('#fav-binge-' + favorite.bingeId).text("Saved")
-      $('#fav-icon-binge-' + favorite.bingeId).removeClass("fa-plus-circle")              
-      $('#fav-icon-binge-' + favorite.bingeId).addClass("fa-check")              
-    });          
-  });
-
-  
+    
   $(document).on("click", ".save-btn", function() {
     var bingeId = $(this).children("span").data("data-bingeId");
 
@@ -48,6 +30,5 @@ $(document).ready(function() {
       }    
     });
   });
-
   
 });
