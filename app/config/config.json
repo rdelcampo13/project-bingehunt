@@ -1,10 +1,9 @@
 {
   "development": {
-
-    "username": "yskgzizp5tjhh23j",
-    "password": "frqal5jmifazttgw",
-    "database": "p7vyxpd5cq4iygv8",
-    "host": "vhw3t8e71xdz9k14.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "",
+    "database": "bingehunt_db",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {

@@ -4,6 +4,11 @@ body {
   background-attachment: fixed;
 }
 
+.navbar {
+  border-bottom: 1px solid #e4e4e4 !important;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
 
 /* HOMEPAGE */
 .vertical-center {
@@ -22,12 +27,24 @@ body {
   padding: 6rem 2rem;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+    background-image: url("../img/home.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 90%;
+    padding: 6rem 2rem;
+  }
+}
+
 .type-filter {
   padding: 1rem;
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .25rem;
+  margin-bottom: 10px;
 }
 
 .type-filter-heading {
